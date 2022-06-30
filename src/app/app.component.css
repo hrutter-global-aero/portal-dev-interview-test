@@ -19,15 +19,15 @@ nav a.active {
   background-color: black;
 }
 
-.to-do-list-container {
+.to-do-list .container {
     border: #7ac142 2px dotted;
     margin-top: 10rem;
 }
 
-.to-do-list-header {
+.to-do-list .header {
     padding: 0rem 1rem;
 }
 
-.to-do-list {
+.to-do-list .list {
     padding: 0rem 3rem;
 }
