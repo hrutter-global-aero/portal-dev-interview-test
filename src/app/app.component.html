@@ -1,7 +1,17 @@
-<h1>{{title}}</h1>
+<h1>{{ title }}</h1>
 <nav>
   <a routerLink="/dashboard">Dashboard</a>
   <a routerLink="/heroes">Heroes</a>
 </nav>
 <router-outlet></router-outlet>
-<app-messages></app-messages>
+
+<!-- <app-messages></app-messages> -->
+
+<div class="to-do-list-container">
+  <h4 class="to-do-list-header">To-Do</h4>
+  <ol class="to-do-list">
+    <li>Issue 1</li>
+    <li>Issue 2</li>
+    <li>Issue 3</li>
+  </ol>
+</div>
