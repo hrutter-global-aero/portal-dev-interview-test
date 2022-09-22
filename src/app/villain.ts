@@ -1,6 +1,6 @@
 import { Hero } from "./hero";
 
-export interface Sidekick {
+export interface Villain {
     id: number;
     name: string;
     dateOfBirth: Date;
