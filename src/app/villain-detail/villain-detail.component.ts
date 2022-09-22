@@ -3,6 +3,8 @@ import { ActivatedRoute } from "@angular/router";
 import { Villain } from "../villain";
 import { VillainService } from "../villain.service";
 import { Location } from "@angular/common";
+import { HeroService } from "../hero.service";
+import { Hero } from "../hero";
 
 @Component({
 	selector: "app-villain-detail",
@@ -11,15 +13,18 @@ import { Location } from "@angular/common";
 })
 export class VillainDetailComponent implements OnInit {
 	villain!: Villain;
+	heroes: Hero[] = [];
 
 	constructor(
 		private route: ActivatedRoute,
 		private villainService: VillainService,
+		private heroService: HeroService,
 		private location: Location
 	) {}
 
 	ngOnInit(): void {
 		this.getVillain();
+		this.getHeroes();
 	}
 
 	getVillain(): void {
@@ -27,6 +32,12 @@ export class VillainDetailComponent implements OnInit {
 		this.villainService
 			.getVillain(id)
 			.subscribe((villain) => (this.villain = villain));
+	}
+
+	getHeroes(): void {
+		this.heroService
+			.getHeroes()
+			.subscribe((heroes) => (this.heroes = heroes));
 	}
 
 	goBack(): void {
@@ -37,6 +48,8 @@ export class VillainDetailComponent implements OnInit {
 		if (!this.villain) {
 			return;
 		}
+
+		console.log("HR - villain", this.villain);
 
 		this.villainService.updateVillain(this.villain).subscribe((_) => {
 			this.goBack();

@@ -20,8 +20,8 @@ export class InMemoryDataService implements InMemoryDbService {
 		];
 
 		const villains = [
-			{ id: 11, name: "Johnny Rotten" },
-			{ id: 12, name: "Mr Nasty" },
+			{ id: 11, name: "Johnny Rotten", nemesis: null },
+			{ id: 12, name: "Mr Nasty", nemesis: null },
 		];
 		return { heroes, villains };
 	}
