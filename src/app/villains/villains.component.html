@@ -1,1 +1,17 @@
-<p>villains works!</p>
+<h2>My Villains</h2>
+
+<ul class="villains">
+	<li *ngFor="let villain of villains">
+		<a routerLink="/detail/{{ villain.id }}">
+			<span class="badge">{{ villain.id }}</span> {{ villain.name }}
+		</a>
+		<button
+			type="button"
+			class="delete"
+			title="delete villain"
+			(click)="delete(villain)"
+		>
+			x
+		</button>
+	</li>
+</ul>
