@@ -2,7 +2,7 @@
 
 <ul class="villains">
 	<li *ngFor="let villain of villains">
-		<a routerLink="/detail/{{ villain.id }}">
+		<a routerLink="/villain-detail/{{ villain.id }}">
 			<span class="badge">{{ villain.id }}</span> {{ villain.name }}
 		</a>
 		<button

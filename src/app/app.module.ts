@@ -15,6 +15,7 @@ import { HeroesComponent } from "./heroes/heroes.component";
 import { HeroSearchComponent } from "./hero-search/hero-search.component";
 import { MessagesComponent } from "./messages/messages.component";
 import { VillainsComponent } from "./villains/villains.component";
+import { VillainDetailComponent } from './villain-detail/villain-detail.component';
 
 @NgModule({
 	imports: [
@@ -38,6 +39,7 @@ import { VillainsComponent } from "./villains/villains.component";
 		MessagesComponent,
 		HeroSearchComponent,
 		VillainsComponent,
+  VillainDetailComponent,
 	],
 	bootstrap: [AppComponent],
 })

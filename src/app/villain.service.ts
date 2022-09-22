@@ -41,14 +41,14 @@ export class VillainService {
 	// 	);
 	// }
 
-	// /** GET villain by id. Will 404 if id not found */
-	// getVillain(id: number): Observable<Villain> {
-	// 	const url = `${this.villainsUrl}/${id}`;
-	// 	return this.http.get<Villain>(url).pipe(
-	// 		tap((_) => this.log(`fetched villain id=${id}`)),
-	// 		catchError(this.handleError<Villain>(`getVillain id=${id}`))
-	// 	);
-	// }
+	/** GET villain by id. Will 404 if id not found */
+	getVillain(id: number): Observable<Villain> {
+		const url = `${this.villainsUrl}/${id}`;
+		return this.http.get<Villain>(url).pipe(
+			tap((_) => this.log(`fetched villain id=${id}`)),
+			catchError(this.handleError<Villain>(`getVillain id=${id}`))
+		);
+	}
 
 	// /* GET villaines whose name contains search term */
 	// searchVillaines(term: string): Observable<Villain[]> {
@@ -68,17 +68,17 @@ export class VillainService {
 
 	//////// Save methods //////////
 
-	// /** POST: add a new villain to the server */
-	// addVillain(villain: Villain): Observable<Villain> {
-	// 	return this.http
-	// 		.post<Villain>(this.villainsUrl, villain, this.httpOptions)
-	// 		.pipe(
-	// 			tap((newVillain: Villain) =>
-	// 				this.log(`added villain w/ id=${newVillain.id}`)
-	// 			),
-	// 			catchError(this.handleError<Villain>("addVillain"))
-	// 		);
-	// }
+	/** POST: add a new villain to the server */
+	addVillain(villain: Villain): Observable<Villain> {
+		return this.http
+			.post<Villain>(this.villainsUrl, villain, this.httpOptions)
+			.pipe(
+				tap((newVillain: Villain) =>
+					this.log(`added villain w/ id=${newVillain.id}`)
+				),
+				catchError(this.handleError<Villain>("addVillain"))
+			);
+	}
 
 	/** DELETE: delete the villain from the server */
 	deleteVillain(id: number): Observable<Villain> {
@@ -90,13 +90,13 @@ export class VillainService {
 		);
 	}
 
-	// /** PUT: update the villain on the server */
-	// updateVillain(villain: Villain): Observable<any> {
-	// 	return this.http.put(this.villainsUrl, villain, this.httpOptions).pipe(
-	// 		tap((_) => this.log(`updated villain id=${villain.id}`)),
-	// 		catchError(this.handleError<any>("updateVillain"))
-	// 	);
-	// }
+	/** PUT: update the villain on the server */
+	updateVillain(villain: Villain): Observable<any> {
+		return this.http.put(this.villainsUrl, villain, this.httpOptions).pipe(
+			tap((_) => this.log(`updated villain id=${villain.id}`)),
+			catchError(this.handleError<any>("updateVillain"))
+		);
+	}
 
 	/**
 	 * Handle Http operation that failed.
