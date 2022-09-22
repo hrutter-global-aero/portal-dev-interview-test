@@ -49,8 +49,6 @@ export class VillainDetailComponent implements OnInit {
 			return;
 		}
 
-		console.log("HR - villain", this.villain);
-
 		this.villainService.updateVillain(this.villain).subscribe((_) => {
 			this.goBack();
 		});
