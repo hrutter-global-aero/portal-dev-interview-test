@@ -38,6 +38,8 @@ export class HeroDetailComponent implements OnInit {
 		}
 
 		// Update hero using observable service. When resolved, call goBack().
-		this.heroService.updateHero(this.hero);
+		this.heroService.updateHero(this.hero).subscribe((_) => {
+			this.goBack();
+		});
 	}
 }

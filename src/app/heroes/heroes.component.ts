@@ -35,7 +35,7 @@ export class HeroesComponent implements OnInit {
 
 	delete(hero: Hero): void {
 		// Filter out deleted hero from hero list
-		this.heroes = this.heroes.filter((h) => h === hero);
+		this.heroes = this.heroes.filter((h) => h !== hero);
 
 		// Call delete hero service passing the ID and subscribe to the observable
 		this.heroService.deleteHero(hero.id).subscribe();
