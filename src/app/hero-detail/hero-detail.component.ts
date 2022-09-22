@@ -34,9 +34,11 @@ export class HeroDetailComponent implements OnInit {
   }
 
   save(): void {
-    // Update hero through service call and call goBack(),
-    if (this.hero) {
-      this.heroService.updateHero(this.hero)
+    if (!this.hero) {
+        return;
     }
+    
+    // Update hero using observable service. When resolved, call goBack().
+    this.heroService.updateHero(this.hero)
   }
 }
