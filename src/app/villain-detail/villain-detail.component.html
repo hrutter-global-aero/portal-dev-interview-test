@@ -9,15 +9,7 @@
 			placeholder="Hero name"
 		/>
 	</div>
-	<div>
-		<label for="nemesis-name">Nemesis: </label>
-		<select id="nemesis-name" [(ngModel)]="villain.nemesis">
-			<option [ngValue]=""></option>
-			<option *ngFor="let hero of heroes" [ngValue]="hero.name">
-				{{ hero.name }}
-			</option>
-		</select>
-	</div>
+
 	<button type="button" (click)="goBack()">go back</button>
 	<button type="button" (click)="save()">save</button>
 </div>

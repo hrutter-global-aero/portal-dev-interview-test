@@ -4,6 +4,8 @@ import { Location } from "@angular/common";
 
 import { Hero } from "../hero";
 import { HeroService } from "../hero.service";
+import { VillainService } from "../villain.service";
+import { Villain } from "../villain";
 
 @Component({
 	selector: "app-hero-detail",
@@ -12,20 +14,29 @@ import { HeroService } from "../hero.service";
 })
 export class HeroDetailComponent implements OnInit {
 	hero: Hero | undefined;
+	villains: Villain[] = [];
 
 	constructor(
 		private route: ActivatedRoute,
 		private heroService: HeroService,
+		private villainService: VillainService,
 		private location: Location
 	) {}
 
 	ngOnInit(): void {
 		this.getHero();
+		this.getVillains();
 	}
 
 	getHero(): void {
 		const id = parseInt(this.route.snapshot.paramMap.get("id")!, 10);
 		this.heroService.getHero(id).subscribe((hero) => (this.hero = hero));
+	}
+
+	getVillains(): void {
+		this.villainService
+			.getVillains()
+			.subscribe((villains) => (this.villains = villains));
 	}
 
 	goBack(): void {

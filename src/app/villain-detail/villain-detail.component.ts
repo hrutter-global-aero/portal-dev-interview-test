@@ -4,7 +4,6 @@ import { Villain } from "../villain";
 import { VillainService } from "../villain.service";
 import { Location } from "@angular/common";
 import { HeroService } from "../hero.service";
-import { Hero } from "../hero";
 
 @Component({
 	selector: "app-villain-detail",
@@ -13,7 +12,6 @@ import { Hero } from "../hero";
 })
 export class VillainDetailComponent implements OnInit {
 	villain!: Villain;
-	heroes: Hero[] = [];
 
 	constructor(
 		private route: ActivatedRoute,
@@ -24,7 +22,6 @@ export class VillainDetailComponent implements OnInit {
 
 	ngOnInit(): void {
 		this.getVillain();
-		this.getHeroes();
 	}
 
 	getVillain(): void {
@@ -32,12 +29,6 @@ export class VillainDetailComponent implements OnInit {
 		this.villainService
 			.getVillain(id)
 			.subscribe((villain) => (this.villain = villain));
-	}
-
-	getHeroes(): void {
-		this.heroService
-			.getHeroes()
-			.subscribe((heroes) => (this.heroes = heroes));
 	}
 
 	goBack(): void {
