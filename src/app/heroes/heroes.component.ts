@@ -35,7 +35,7 @@ export class HeroesComponent implements OnInit {
 
 	/**
 	 * Call delete hero service and update the page to reflect the changes.
-	*/
+	 */
 	delete(hero: Hero): void {
 		// Call delete hero service passing the ID and subscribing to the observable.
 		this.heroService.deleteHero(hero.id).subscribe();
